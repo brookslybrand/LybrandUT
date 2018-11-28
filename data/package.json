@@ -1,0 +1,23 @@
+{
+  "name": "data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "import_excel.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "eslint": "^5.9.0",
+    "nodemon": "^1.18.6",
+    "read-excel-file": "^2.0.5"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node src/convert_google_sheets",
+    "build": "babel src --out-dir dist",
+    "serve": "node dist/server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

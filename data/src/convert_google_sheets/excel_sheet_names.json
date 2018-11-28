@@ -1,0 +1,14 @@
+[
+  {
+    "fileName": "fall_2015.xlsx",
+    "sheetNames": ["September2015", "October2015", "November2015", "December2015"]
+  },
+  {
+    "fileName": "spring_2016.xlsx",
+    "sheetNames": ["January2016", "February2016", "March2016", "April2016", "May2016"]
+  },
+  {
+    "fileName": "spring_2017.xlsx",
+    "sheetNames": ["January2017", "February2017"]
+  }
+]
