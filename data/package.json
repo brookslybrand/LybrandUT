@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "import_excel.js",
-  "dependencies": {},
+  "dependencies": {
+    "csvtojson": "^2.0.8"
+  },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
@@ -14,7 +16,8 @@
     "read-excel-file": "^2.0.5"
   },
   "scripts": {
-    "start": "nodemon --exec babel-node src/convert_google_sheets",
+    "start": "nodemon --exec babel-node src",
+    "ugh": "babel-node src",
     "build": "babel src --out-dir dist",
     "serve": "node dist/server.js"
   },

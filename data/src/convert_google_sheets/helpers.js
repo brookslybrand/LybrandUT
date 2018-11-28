@@ -3,13 +3,11 @@ import readXlsxFile from 'read-excel-file/node'
 
 // the object template to take from
 const objectTemplate = {
-  'Class': '',
-  'Description': '',
-  'Start date': '',
-  'Start time': '',
-  'End date': '',
-  'End time': '',
-  'Duration': ''
+  className: '',
+  description: '',
+  startDate: '',
+  endDate: '',
+  duration: ''
 }
 
 // gets the records for a single file and formats them correctly
@@ -25,14 +23,14 @@ const getRecords = rows => {
   const classes = columns.filter(column => column !== 'Date')
   return records.reduce((arr, record) => {
     const date = record['Date']
-    const obj = {'Start date': date, 'Start time': date}
+    const obj = {startDate: date, endDate: date}
     // add the data for the next date of classes
     return arr.concat(
-      classes.map(c => ({...objectTemplate, ...obj, 'Class': c, 'Duration': record[c]}))
+      classes.map(className => ({...objectTemplate, ...obj, className, duration: record[className]}))
     )
   }, [])
   // remove records with duration of 0
-  .filter(d => d.Duration > 0)
+  .filter(d => d.duration > 0)
 }
 
 // returns an array of promises of the formated excel data for a fileName and all the given sheets
